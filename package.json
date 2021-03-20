@@ -23,8 +23,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build" , // 将你的项目预编译成静态文件放在build文件夹
-    "deploy": "gh-pages -d build"  
+    "predeploy": "npm run build" , 
+    "deploy": "run gh-pages -d build"  
   },
   "eslintConfig": {
     "extends": [

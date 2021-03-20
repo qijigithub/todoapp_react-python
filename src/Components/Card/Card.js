@@ -31,7 +31,7 @@ const Card = (props) => {
     return (
         <>
         {
-            listOfTodos.map(todo=>(
+          listOfTodos?listOfTodos.map(todo=>(
                 <List>
                     <ListItem key={todo.id}>
                     <ListItemText primary={todo.content} />
@@ -42,7 +42,7 @@ const Card = (props) => {
             </ListItemSecondaryAction>
                 </ListItem>
                 </List>
-            ))
+            )):<div></div>
         }
         </>
     )
