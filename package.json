@@ -80,7 +80,7 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "start-flask-api":"cd api && venv/bin/flask run",
-    "predeploy": "cd api && venv/bin/flask run && npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {

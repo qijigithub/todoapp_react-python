@@ -1,7 +1,7 @@
 from flask import Flask,jsonify,request,json
 from flask_sqlalchemy import SQLAlchemy
 
-app = Flask(__name__, static_folder="../build/static", template_folder="../build")
+app = Flask(__name__, static_folder="../build", static_url_path="/")
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///example.db"
 db =SQLAlchemy(app)
 
@@ -19,8 +19,12 @@ def todo_serializer(todo):
         # 'date':todo.date,        
     }
 
-@app.route('/api', methods=['GET'])
+@app.route('/')
 def index():
+    return app.send_static_file('index.html')
+
+@app.route('/api', methods=['GET'])
+def indexx():
     return jsonify([*map(todo_serializer,Todo.query.all())])
 
 @app.route('/api/create', methods=['POST'])
